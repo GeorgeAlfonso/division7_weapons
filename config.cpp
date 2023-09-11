@@ -18,7 +18,9 @@ class CfgPatches
 class WeaponSlotsInfo;
 class MuzzleSlot;
 class CowsSlot;
+
 class PointerSlot;
+
 class CfgWeapons
 {
 	class OPTRE_M392_DMR;
@@ -29,7 +31,7 @@ class CfgWeapons
 		displayName = "[DIV7] M392 DMR";
 		canShootInWater = 1;
 		magazineWell[] = {};
-		magazines[] = {"TEST_mag_762x51_Hit50", "TEST_mag_762x51_Hit100", "TEST_mag_762x51_HitN50", "TEST_mag_762x51_Caliber50", "TEST_mag_762x51_Caliber100", "TEST_mag_762x51_CaliberN50", "TEST_mag_762x51_CaliberN100", "OPTRE_15Rnd_762x51_Mag", "OPTRE_15Rnd_762x51_Mag_Tracer", "OPTRE_15Rnd_762x51_Mag_Tracer_Yellow"};
+		magazines[] = {"DIV7__Mag_762x51mm_15Rnd_APFSDS_Tracer", "DIV7__Mag_762x51mm_15Rnd_APFSDS", "OPTRE_15Rnd_762x51_Mag", "OPTRE_15Rnd_762x51_Mag_Tracer", "OPTRE_15Rnd_762x51_Mag_Tracer_Yellow"};
 		class WeaponSlotsInfo : WeaponSlotsInfo
 		{
 			class MuzzleSlot : MuzzleSlot
@@ -42,16 +44,24 @@ class CfgWeapons
 			};
 			class PointerSlot : PointerSlot
 			{
-				compatibleitems[] = {"OPTRE_M7_Flashlight", "OPTRE_M7_Laser", "OPTRE_M7_Vis_Red_Laser", "OPTRE_BMR_Laser", "OPTRE_BMR_MEQ_Flashlight", "OPTRE_BMR_Vis_Red_Laser", "optre_m12_laser", "OPTRE_M12_Vis_Red_Laser", "OPTRE_M12_Flashlight", "optre_m45_flashlight", "optre_m45_flashlight_red", "OPTRE_M6C_Laser", "OPTRE_M6C_Vis_Red_Laser", "OPTRE_M6C_Flashlight", "OPTRE_M6G_Laser", "OPTRE_M6G_Vis_Red_Laser", "OPTRE_M6G_Flashlight", "acc_pointer_ir", "acc_flashlight", "ace_acc_pointer_green"};
+				compatibleitems[] = {"OPTRE_M7_Flashlight", "optre_dmr_light", "OPTRE_M7_Laser", "OPTRE_M7_Vis_Red_Laser", "OPTRE_BMR_Laser", "OPTRE_BMR_MEQ_Flashlight", "OPTRE_BMR_Vis_Red_Laser", "optre_m12_laser", "OPTRE_M12_Vis_Red_Laser", "OPTRE_M12_Flashlight", "optre_m45_flashlight", "optre_m45_flashlight_red", "OPTRE_M6C_Laser", "OPTRE_M6C_Vis_Red_Laser", "OPTRE_M6C_Flashlight", "OPTRE_M6G_Laser", "OPTRE_M6G_Vis_Red_Laser", "OPTRE_M6G_Flashlight", "acc_pointer_ir", "acc_flashlight", "ace_acc_pointer_green"};
 			};
 		};
 	};
 };
 
-	class CfgAmmo
+class CfgAmmo
 	{
 
 		class B_762x51_Ball;
+
+		class DIV7_762x51_Ball : B_762x51_Ball {
+			caliber = 2.1;
+			hit = 24;
+			typicalSpeed = 750;
+			model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
+		};
+
 		class TEST_762x51_Ball_Baseline : B_762x51_Ball
 		{
 			caliber = 2.1;
@@ -86,9 +96,38 @@ class CfgWeapons
 		};
 	};
 
-	class CfgMagazines
+class CfgMagazines
 	{
+		
 		class 20Rnd_762x51_Mag;
+
+		class DIV7__Mag_762x51mm_15Rnd_APFSDS : 20Rnd_762x51_Mag
+		{
+			dlc = "DIV7";
+			model = "\OPTRE_Weapons\Ammo\MA5Ammo.p3d";
+			displayname = "15Rnd 7.62x51mm APFSDS Magazine";
+			displaynameshort = "7.62x51mm APFSDS";
+			ammo = "DIV7_762x51_Ball";
+			count = 15;
+			initspeed = 1000;
+			picture = "\OPTRE_weapons\ar\icons\magazine.paa";
+			descriptionshort = "7.62x51mm APFSDS";
+			mass = 5;
+			tracersEvery = 0;
+			lastRoundsTracer = 3;
+		};
+
+		class DIV7__Mag_762x51mm_15Rnd_APFSDS_Tracer : DIV7__Mag_762x51mm_15Rnd_APFSDS
+		{
+			dlc = "DIV7";
+			displayname = "15Rnd 7.62x51mm APFSDS Magazine (Tracer)";
+			displaynameshort = "7.62x51mm APFSDS (Tracer)";
+			ammo = "DIV7_762x51_Ball";
+			descriptionshort = "7.62x51mm APFSDS (Tracer)";
+			tracersEvery = 1;
+			lastRoundsTracer = 15;
+		};
+
 		class TEST_mag_762x51_Control_Group : 20Rnd_762x51_Mag
 		{
 			dlc = "OPTRE";
@@ -153,3 +192,51 @@ class CfgWeapons
 			descriptionshort = "caliber -50%";
 		};
 	};
+
+/*
+class CfgVehicles
+{
+	class Weapon_Bag_Base;
+	class DIV7_SOVUSHKA_Pack : Weapon_Bag_Base
+	{
+		dlc = "DIV7";
+		scope = 2;
+		scopeCurator = 2;
+		author = "Division-7";
+		displayName = "UNSC Rucksack (Sovushka)";
+		picture = "\OPTRE_weapons\backpacks\icons\rucksack_black";
+		model = "\OPTRE_unsc_units\army\rucksack";
+		hiddenSelections[] = {"camo", "camo2", "B_Medic", "B_Radio"};
+		hiddenSelectionsMaterials[] = {};
+		hiddenSelectionsTextures[] = {"optre_unsc_units\army\data\soft_backpack_co", ""};
+		class assembleInfo
+		{
+			primary = 1;
+			base = "";
+			assembleTo = "DIV7_SOVUSHKA_TEST";
+			displayName = "M247Sovushka Tripod Turret";
+			dissasembleTo[] = {};
+		};
+	};
+
+	class OPTRE_Static_M247T_Tripod;
+	class DIV7_SOVUSHKA_TEST : OPTRE_Static_M247T_Tripod
+	{
+		dlc = "DIV7";
+		scope = 2;
+		scopeCurator = 2;
+		author = "Division-7";
+		model = "division7_weapons\SOVA\m37_sovushka_A3T.p3d";
+		hiddenSelections[] = {"body", "box", "handle", "screen", "shield", "strance"};
+		hiddenSelectionsMaterials[] = {"\division7_weapons\SOVA\DIV7_M37(Sovushka)_body.rvmat", "division7_weapons\SOVA\DIV7_M37(Sovushka)_box.rvmat", "division7_weapons\SOVA\DIV7_M37(Sovushka)_handle.rvmat", "division7_weapons\SOVA\DIV7_M37(Sovushka)_screen.rvmat", "division7_weapons\SOVA\DIV7_M37(Sovushka)_shield.rvmat", "division7_weapons\SOVA\DIV7_M37(Sovushka)_stance.rvmat"};
+		class assembleInfo
+		{
+			primary = 1;
+			base = "";
+			assembleTo = "";
+			displayName = "";
+			dissasembleTo[] = {"DIV7_SOVUSHKA_Pack"};
+		};
+	};
+};
+*/
