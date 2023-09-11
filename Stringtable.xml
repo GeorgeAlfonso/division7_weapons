@@ -1,0 +1,91 @@
+<Project name="Division-7">
+	<Package name="ACE3ArsenalEX">
+		<Container name="NameCategory">
+			<Key ID="STR_DIV7_Unifroms">
+			    <Original>Unifroms Sets of Division-7</Original>
+			    <Russian>Комплекты юниформы 7ой дивизии</Russian>
+			</Key>
+			<Key ID="STR_DIV7_Unifroms_Сamouflageы">
+			    <Original>Unifroms camouflages of Division-7</Original>
+			    <Russian>Камуфляжи униформы</Russian>
+			</Key>
+			<Key ID="STR_DIV7_Unifroms_Сolors">
+			    <Original>Unifroms colors of Division-7</Original>
+			    <Russian>Цвета униформы</Russian>
+			</Key>
+		</Container>
+	</Package>
+		<Container name="Colors_Camouflages_Sets">
+			<Key ID="STR_Color_Red">
+			    <Original>Red</Original>
+			    <Russian>Красный</Russian>
+			</Key>
+			<Key ID="STR_Color_Black">
+			    <Original>Black</Original>
+			    <Russian>Черный</Russian>
+			</Key>
+			<Key ID="STR_Color_Grey">
+			    <Original>Grey</Original>
+			    <Russian>Серый</Russian>
+			</Key>
+			<Key ID="STR_Color_White">
+			    <Original>White</Original>
+			    <Russian>Белый</Russian>
+			</Key>
+		</Container>
+		<Container name="Uniform_Sets">
+			<Key ID="STR_Red_Splinter">
+			    <Original>[DIV7] ODST BDU Red Splinter</Original>
+			    <Russian>[DIV7] Красная полевая форма УВОД Splinter</Russian>
+			</Key>
+			<Key ID="STR_Red_Woodland">
+			    <Original>[DIV7] ODST BDU Red Woodland</Original>
+			    <Russian>[DIV7] Красная полевая форма УВОД Woodland</Russian>
+			</Key>
+			<Key ID="STR_ODST_BDU_Black">
+			    <Original>[DIV7] ODST BDU Black</Original>
+			    <Russian>[DIV7] Чёрная полевая форма УВОД</Russian>
+			</Key>
+			<Key ID="STR_ODST_BDU_Black_Splinter">
+			    <Original>[DIV7] ODST BDU Black Splinter</Original>
+			    <Russian>[DIV7] Чёрная полевая форма УВОД Splinter</Russian>
+			</Key>
+			<Key ID="STR_ODST_BDU_Black_Woodland">
+			    <Original>[DIV7] ODST BDU Black Woodland</Original>
+			    <Russian>[DIV7] Чёрная полевая форма УВОД Woodland</Russian>
+			</Key>			
+			<Key ID="STR_ODST_BDU_Grey_Basic">
+			    <Original>[DIV7] ODST BDU Grey</Original>
+			    <Russian>[DIV7] Серая полевая форма УВОД</Russian>
+			</Key>
+			<Key ID="STR_ODST_BDU_Grey_Splinter">
+			    <Original>[DIV7] ODST BDU Grey Splinter</Original>
+			    <Russian>[DIV7] Серая полевая форма УВОД Splinter</Russian>
+			</Key>
+			<Key ID="STR_ODST_BDU_Grey_Woodland">
+			    <Original>[DIV7] ODST BDU Grey Woodland</Original>
+			    <Russian>[DIV7] Серая полевая форма УВОД Woodland</Russian>
+			</Key>
+			<Key ID="STR_ODST_BDU_White_Basic">
+			    <Original>[DIV7]ODST BDU White</Original>
+			    <Russian>[DIV7] Белая полевая форма УВОД</Russian>
+			</Key>
+			<Key ID="STR_ODST_BDU_White_Splinter">
+			    <Original>[DIV7]ODST BDU White Splinter</Original>
+			    <Russian>[DIV7] Белая полевая форма УВОД Woodland</Russian>
+			</Key>
+			<Key ID="STR_ODST_BDU_White_Woodland">
+			    <Original>[DIV7]ODST BDU White Woodland</Original>
+			    <Russian>[DIV7] Белая полевая форма УВОД Woodland</Russian>
+			</Key>
+			<Key ID="STR_ODST_BDU_Red_Splinter">
+			    <Original>[DIV7]ODST BDU Red Splinter</Original>
+			    <Russian>[DIV7] Красная полевая форма УВОД Woodland</Russian>
+			</Key>
+			<Key ID="STR_ODST_BDU_Red_Woodland">
+			    <Original>[DIV7]ODST BDU Red Woodland</Original>
+			    <Russian>[DIV7] Красная полевая форма УВОД Woodland</Russian>
+			</Key>
+		</Container>
+	</Package>
+</Project>
