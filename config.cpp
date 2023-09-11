@@ -93,7 +93,7 @@ class CfgWeapons
 		{
 			dlc = "OPTRE";
 			model = "\OPTRE_Weapons\Ammo\MA5Ammo.p3d";
-			displayname = "[test] Control Group";
+			displayname = "[test] Control Group1";
 			displaynameshort = "Control Group";
 			ammo = "TEST_762x51_Ball_Baseline";
 			count = 600;
