@@ -23,8 +23,10 @@ class PointerSlot;
 
 class CfgWeapons
 {
+	class OPTRE_M45A;
+	class OPTRE_M90A;
 	class OPTRE_M392_DMR;
-
+	
 	class DIV7_OPTRE_M392_DMR : OPTRE_M392_DMR
 	{
 		baseWeapon = "DIV7_OPTRE_M392_DMR";
@@ -48,11 +50,55 @@ class CfgWeapons
 			};
 		};
 	};
+
+	class DIV7_M45A : OPTRE_M45A
+	{
+		baseWeapon = "DIV7_OPTRE_M45A";
+		displayName = "[DIV7] M45A";
+		magazineWell[] = {};
+		magazines[] = {"OPTRE_12Rnd_8Gauge_Pellets", "OPTRE_6Rnd_8Gauge_Pellets", "OPTRE_12Rnd_8Gauge_Slugs", "OPTRE_6Rnd_8Gauge_Slugs", "DIV7_12Rnd_8Gauge_Pellets"};
+		class WeaponSlotsInfo : WeaponSlotsInfo{
+				class MuzzleSlot : MuzzleSlot{
+						compatibleitems[] = {"muzzle_snds_h_mg_blk_f", "muzzle_snds_l", "optre_ma5suppressor", "optre_m7_silencer", "optre_m6_silencer", "ace_muzzle_mzls_b", "muzzle_snds_b", "OPTRE_MA37KSuppressor", "muzzle_snds_65_TI_blk_F", "OPTRE_srs99d_suppressor", "OPTRE_srs99d_suppressor"};
+			};
+			class CowsSlot: CowsSlot
+			{
+				compatibleitems[] = {"optic_Yorris","optic_DMS","optic_DMS_ghex_F","optic_ERCO_blk_F","optic_ERCO_khk_F","optic_ERCO_snd_F","optic_MRCO","optic_Arco","optic_Arco_ghex_F","optic_Arco_blk_F","optic_aco","optic_ACO_grn","optic_aco_smg","optic_ACO_grn_smg","optic_hamr","optic_Hamr_khk_F","optic_Holosight","optic_Holosight_smg","optic_Holosight_blk_F","optic_Holosight_khk_F","optic_Holosight_smg_blk_F","optic_Holosight_smg_khk_F","OPTRE_M392_Scope","OPTRE_BR55HB_Scope","OPTRE_M7_Sight","OPTRE_M393_Scope","OPTRE_M393_ACOG","OPTRE_M393_EOTECH","OPTRE_M73_SmartLink","OPTRE_MA5_SmartLink","OPTRE_MA5_SmartLink_v2","OPTRE_MA5C_SmartLink_v2","OPTRE_MA5_SmartLink_legacy","OPTRE_MA5C_SmartLink_legacy","OPTRE_M12_Optic","OPTRE_M12_Optic_Red","OPTRE_M12_Optic_Green","optic_ico_01_black_f","OPTRE_BR45_Scope"};
+			};
+			class PointerSlot: PointerSlot
+			{
+				compatibleitems[] = {"OPTRE_M7_Flashlight","OPTRE_M7_Laser","OPTRE_M7_Vis_Red_Laser","OPTRE_BMR_Laser","OPTRE_BMR_MEQ_Flashlight","OPTRE_BMR_Vis_Red_Laser","optre_m12_laser","OPTRE_M12_Vis_Red_Laser","OPTRE_M12_Flashlight","optre_m45_flashlight","optre_m45_flashlight_red","OPTRE_M6C_Laser","OPTRE_M6C_Vis_Red_Laser","OPTRE_M6C_Flashlight","OPTRE_M6G_Laser","OPTRE_M6G_Vis_Red_Laser","OPTRE_M6G_Flashlight","acc_pointer_ir","acc_flashlight","ace_acc_pointer_green","acc_pointer_vis_red"};
+			};
+		};
+	};
+
+	class DIV7_M90A : OPTRE_M90A
+	{
+		baseWeapon = "DIV7_OPTRE_M90A";
+		displayName = "[DIV7] M90";
+		magazineWell[] = {};
+		magazines[] = {"OPTRE_12Rnd_8Gauge_Pellets", "OPTRE_6Rnd_8Gauge_Pellets", "OPTRE_12Rnd_8Gauge_Slugs", "OPTRE_6Rnd_8Gauge_Slugs", "DIV7_12Rnd_8Gauge_Pellets"};
+		class WeaponSlotsInfo : WeaponSlotsInfo
+		{
+			class MuzzleSlot : MuzzleSlot
+			{
+				compatibleitems[] = {"muzzle_snds_h_mg_blk_f", "muzzle_snds_l", "optre_ma5suppressor", "optre_m7_silencer", "optre_m6_silencer", "ace_muzzle_mzls_b", "muzzle_snds_b", "OPTRE_MA37KSuppressor", "muzzle_snds_65_TI_blk_F", "OPTRE_srs99d_suppressor", "OPTRE_srs99d_suppressor"};
+			};
+			class CowsSlot : CowsSlot
+			{
+				compatibleitems[] = {};
+			};
+			class PointerSlot : PointerSlot
+			{
+				compatibleitems[] = {"OPTRE_M7_Flashlight", "OPTRE_M7_Laser", "OPTRE_M7_Vis_Red_Laser", "OPTRE_BMR_Laser", "OPTRE_BMR_MEQ_Flashlight", "OPTRE_BMR_Vis_Red_Laser", "optre_m12_laser", "OPTRE_M12_Vis_Red_Laser", "OPTRE_M12_Flashlight", "optre_m45_flashlight", "optre_m45_flashlight_red", "OPTRE_M6C_Laser", "OPTRE_M6C_Vis_Red_Laser", "OPTRE_M6C_Flashlight", "OPTRE_M6G_Laser", "OPTRE_M6G_Vis_Red_Laser", "OPTRE_M6G_Flashlight", "acc_pointer_ir", "acc_flashlight", "ace_acc_pointer_green", "acc_pointer_vis_red"};
+			};
+		};
+	};
 };
 
 class CfgAmmo
 	{
-
+		class OPTRE_8Gauge_Pellets;
 		class B_762x51_Ball;
 
 		class DIV7_762x51_Ball : B_762x51_Ball {
@@ -60,6 +106,11 @@ class CfgAmmo
 			hit = 24;
 			typicalSpeed = 750;
 			model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
+		};
+
+		class DIV7_8Gause_Pellets : OPTRE_8Gauge_Pellets
+		{
+			hit = 60;
 		};
 
 		class TEST_762x51_Ball_Baseline : B_762x51_Ball
@@ -70,128 +121,54 @@ class CfgAmmo
 			model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
 		};
 
-		class TEST_B_762x51_Tracer_Hit50 : TEST_762x51_Ball_Baseline
-		{
-			hit = 18;
-		};
-		class TEST_B_762x51_Tracer_Hit100 : TEST_762x51_Ball_Baseline
-		{
-			hit = 24;
-		};
-		class TEST_B_762x51_Tracer_HitN50 : TEST_762x51_Ball_Baseline
-		{
-			hit = 6;
-		};
-		class TEST_B_762x51_Tracer_Caliber50 : TEST_762x51_Ball_Baseline
-		{
-			caliber = 3.15;
-		};
-		class TEST_B_762x51_Tracer_Caliber100 : TEST_762x51_Ball_Baseline
-		{
-			caliber = 4,2;
-		};
-		class TEST_B_762x51_Tracer_CaliberN50 : TEST_762x51_Ball_Baseline
-		{
-			caliber = 1;
-		};
 	};
 
 class CfgMagazines
+{
+	class 20Rnd_762x51_Mag;
+
+	class DIV7__Mag_762x51mm_15Rnd_APFSDS : 20Rnd_762x51_Mag
 	{
-		
-		class 20Rnd_762x51_Mag;
-
-		class DIV7__Mag_762x51mm_15Rnd_APFSDS : 20Rnd_762x51_Mag
-		{
-			dlc = "DIV7";
-			model = "\OPTRE_Weapons\Ammo\MA5Ammo.p3d";
-			displayname = "15Rnd 7.62x51mm APFSDS Magazine";
-			displaynameshort = "7.62x51mm APFSDS";
-			ammo = "DIV7_762x51_Ball";
-			count = 15;
-			initspeed = 1000;
-			picture = "\OPTRE_weapons\ar\icons\magazine.paa";
-			descriptionshort = "7.62x51mm APFSDS";
-			mass = 5;
-			tracersEvery = 0;
-			lastRoundsTracer = 3;
-		};
-
-		class DIV7__Mag_762x51mm_15Rnd_APFSDS_Tracer : DIV7__Mag_762x51mm_15Rnd_APFSDS
-		{
-			dlc = "DIV7";
-			displayname = "15Rnd 7.62x51mm APFSDS Magazine (Tracer)";
-			displaynameshort = "7.62x51mm APFSDS (Tracer)";
-			ammo = "DIV7_762x51_Ball";
-			descriptionshort = "7.62x51mm APFSDS (Tracer)";
-			tracersEvery = 1;
-			lastRoundsTracer = 15;
-		};
-
-		class TEST_mag_762x51_Control_Group : 20Rnd_762x51_Mag
-		{
-			dlc = "OPTRE";
-			model = "\OPTRE_Weapons\Ammo\MA5Ammo.p3d";
-			displayname = "[test] Control Group1";
-			displaynameshort = "Control Group";
-			ammo = "TEST_762x51_Ball_Baseline";
-			count = 600;
-			initspeed = 900;
-			picture = "\OPTRE_weapons\ar\icons\magazine.paa";
-			descriptionshort = "Control Group";
-			mass = 1;
-			tracersEvery = 1;
-			lastRoundsTracer = 5;
-		};
-
-		class TEST_mag_762x51_Hit50 : TEST_mag_762x51_Control_Group
-		{
-			ammo = "TEST_B_762x51_Tracer_Hit50";
-			displayname = "[test] hit 50%";
-			displaynameshort = "hit 50%";
-			descriptionshort = "hit 50%";
-		};
-
-		class TEST_mag_762x51_Hit100 : TEST_mag_762x51_Control_Group
-		{
-			ammo = "TEST_B_762x51_Tracer_HitN100";
-			displayname = "[test] hit 100%";
-			displaynameshort = "Hit 100%";
-			descriptionshort = "Hit 100%";
-		};
-
-		class TEST_mag_762x51_HitN50 : TEST_mag_762x51_Control_Group
-		{
-			ammo = "TEST_B_762x51_Tracer_HitN50";
-			displayname = "[test] hit -50%";
-			displaynameshort = "Hit -50%";
-			descriptionshort = "Hit -50%";
-		};
-
-		class TEST_mag_762x51_Caliber50 : TEST_mag_762x51_Control_Group
-		{
-			ammo = "TEST_B_762x51_Tracer_Caliber50";
-			displayname = "[test] caliber 50%";
-			displaynameshort = "caliber 50%";
-			descriptionshort = "caliber 50%";
-		};
-
-		class TEST_mag_762x51_Caliber100 : TEST_mag_762x51_Control_Group
-		{
-			ammo = "TEST_B_762x51_Tracer_Caliber100";
-			displayname = "[test] caliber 100%";
-			displaynameshort = "caliber 100%";
-			descriptionshort = "caliber 100%";
-		};
-
-		class TEST_mag_762x51_CaliberN50 : TEST_mag_762x51_Control_Group
-		{
-			ammo = "TEST_B_762x51_Tracer_CaliberN50";
-			displayname = "[test] caliber -50%";
-			displaynameshort = "caliber -50%";
-			descriptionshort = "caliber -50%";
-		};
+		dlc = "DIV7";
+		model = "\OPTRE_Weapons\Ammo\MA5Ammo.p3d";
+		displayname = "15Rnd 7.62x51mm APFSDS Magazine";
+		displaynameshort = "7.62x51mm APFSDS";
+		ammo = "DIV7_762x51_Ball";
+		count = 15;
+		initspeed = 1000;
+		picture = "\OPTRE_weapons\ar\icons\magazine.paa";
+		descriptionshort = "7.62x51mm APFSDS";
+		mass = 5;
+		tracersEvery = 0;
+		lastRoundsTracer = 3;
 	};
+
+	class DIV7__Mag_762x51mm_15Rnd_APFSDS_Tracer : DIV7__Mag_762x51mm_15Rnd_APFSDS
+	{
+		dlc = "DIV7";
+		displayname = "15Rnd 7.62x51mm APFSDS Magazine (Tracer)";
+		displaynameshort = "7.62x51mm APFSDS (Tracer)";
+		ammo = "DIV7_762x51_Ball";
+		descriptionshort = "7.62x51mm APFSDS (Tracer)";
+		tracersEvery = 1;
+		lastRoundsTracer = 15;
+	};
+
+	class DIV7_12Rnd_8Gauge_Pellets : 20Rnd_762x51_Mag
+	{
+			dlc = "DIV7";
+			model = "\OPTRE_Weapons\Shotgun\Shell_mag_S.p3d";
+			scope = 2;
+			displayname = "[DIV7] 12Rnd 8 Gauge Pellets";
+			ammo = "DIV7_8Gause_Pellets";
+			count = 12;
+			initspeed = 500;
+			picture = "\a3\weapons_F\data\ui\m_12gauge_ca.paa";
+			descriptionshort = "12 Rounds of 8 Gauge Pellets";
+			mass = 16;
+		};
+};
+
 
 /*
 class CfgVehicles
@@ -214,7 +191,7 @@ class CfgVehicles
 			primary = 1;
 			base = "";
 			assembleTo = "DIV7_SOVUSHKA_TEST";
-			displayName = "M247Sovushka Tripod Turret";
+			displayName = "Sovushka Tripod Turret";
 			dissasembleTo[] = {};
 		};
 	};
