@@ -11,7 +11,7 @@ class CfgPatches
 		magazines[] = {};
 		ammo[] = {};
 		requiredVersion = 0.1;
-		requiredAddons[] = {"OPTRE_Core", "OPTRE_Weapons"};
+		requiredAddons[] = {"division7_core", "OPTRE_Weapons"};
 	};
 };
 
@@ -56,7 +56,7 @@ class CfgWeapons
 		baseWeapon = "DIV7_OPTRE_M45A";
 		displayName = "[DIV7] M45A";
 		magazineWell[] = {};
-		magazines[] = {"OPTRE_12Rnd_8Gauge_Pellets", "OPTRE_6Rnd_8Gauge_Pellets", "OPTRE_12Rnd_8Gauge_Slugs", "OPTRE_6Rnd_8Gauge_Slugs", "DIV7_12Rnd_8Gauge_Pellets"};
+		magazines[] = {"OPTRE_12Rnd_8Gauge_Pellets", "OPTRE_6Rnd_8Gauge_Pellets", "OPTRE_12Rnd_8Gauge_Slugs", "OPTRE_6Rnd_8Gauge_Slugs", "DIV7_12Rnd_8Gauge_Pellets_M45"};
 		class WeaponSlotsInfo : WeaponSlotsInfo{
 				class MuzzleSlot : MuzzleSlot{
 						compatibleitems[] = {"muzzle_snds_h_mg_blk_f", "muzzle_snds_l", "optre_ma5suppressor", "optre_m7_silencer", "optre_m6_silencer", "ace_muzzle_mzls_b", "muzzle_snds_b", "OPTRE_MA37KSuppressor", "muzzle_snds_65_TI_blk_F", "OPTRE_srs99d_suppressor", "OPTRE_srs99d_suppressor"};
@@ -77,7 +77,7 @@ class CfgWeapons
 		baseWeapon = "DIV7_OPTRE_M90A";
 		displayName = "[DIV7] M90";
 		magazineWell[] = {};
-		magazines[] = {"OPTRE_12Rnd_8Gauge_Pellets", "OPTRE_6Rnd_8Gauge_Pellets", "OPTRE_12Rnd_8Gauge_Slugs", "OPTRE_6Rnd_8Gauge_Slugs", "DIV7_12Rnd_8Gauge_Pellets"};
+		magazines[] = {"OPTRE_12Rnd_8Gauge_Pellets", "OPTRE_6Rnd_8Gauge_Pellets", "OPTRE_12Rnd_8Gauge_Slugs", "OPTRE_6Rnd_8Gauge_Slugs", "DIV7_12Rnd_8Gauge_Pellets_M90"};
 		class WeaponSlotsInfo : WeaponSlotsInfo
 		{
 			class MuzzleSlot : MuzzleSlot
@@ -108,9 +108,16 @@ class CfgAmmo
 			model = "\A3\Weapons_f\Data\bullettracer\tracer_red";
 		};
 
-		class DIV7_8Gause_Pellets : OPTRE_8Gauge_Pellets
+		class DIV7_8Gause_Pellets_M90 : OPTRE_8Gauge_Pellets
 		{
-			hit = 60;
+			caliber = 4;
+			hit = 25;
+		};
+
+		class DIV7_8Gause_Pellets_M45 : OPTRE_8Gauge_Pellets
+		{
+			caliber = 4;
+			hit = 20;
 		};
 
 		class TEST_762x51_Ball_Baseline : B_762x51_Ball
@@ -154,21 +161,29 @@ class CfgMagazines
 		lastRoundsTracer = 15;
 	};
 
-	class DIV7_12Rnd_8Gauge_Pellets : 20Rnd_762x51_Mag
+	class DIV7_12Rnd_8Gauge_Pellets_M90 : 20Rnd_762x51_Mag
 	{
-			dlc = "DIV7";
-			model = "\OPTRE_Weapons\Shotgun\Shell_mag_S.p3d";
-			scope = 2;
-			displayname = "[DIV7] 12Rnd 8 Gauge Pellets";
-			ammo = "DIV7_8Gause_Pellets";
-			count = 12;
-			initspeed = 500;
-			picture = "\a3\weapons_F\data\ui\m_12gauge_ca.paa";
-			descriptionshort = "12 Rounds of 8 Gauge Pellets";
-			mass = 16;
-		};
-};
+		dlc = "DIV7";
+		model = "\OPTRE_Weapons\Shotgun\Shell_mag_S.p3d";
+		scope = 2;
+		displayname = "[DIV7] 12Rnd 8 Gauge Pellets M90";
+		ammo = "DIV7_8Gause_Pellets_M90";
+		count = 12;
+		initspeed = 500;
+		picture = "\a3\weapons_F\data\ui\m_12gauge_ca.paa";
+		descriptionshort = "12 Rounds of 8 Gauge Pellets M90";
+		mass = 16;
+	};
 
+	class DIV7_12Rnd_8Gauge_Pellets_M45 : DIV7_12Rnd_8Gauge_Pellets_M90
+
+	{
+		displayname = "[DIV7] 12Rnd 8 Gauge Pellets M45";
+		ammo = "DIV7_8Gause_Pellets_M45";
+		descriptionshort = "12 Rounds of 8 Gauge Pellets M45";
+	};
+
+};
 
 /*
 class CfgVehicles
@@ -196,8 +211,8 @@ class CfgVehicles
 		};
 	};
 
-	class OPTRE_Static_M247T_Tripod;
-	class DIV7_SOVUSHKA_TEST : OPTRE_Static_M247T_Tripod
+	class B_T_HMG_01_F;
+	class DIV7_SOVUSHKA_TEST : B_T_HMG_01_F
 	{
 		dlc = "DIV7";
 		scope = 2;
